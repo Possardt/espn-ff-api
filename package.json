@@ -1,0 +1,15 @@
+{
+  "name": "espn-ff-api",
+  "version": "1.0.0",
+  "description": "A node package for accessing the espn fantasy football API",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Ryan Possardt",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
