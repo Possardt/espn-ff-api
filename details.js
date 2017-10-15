@@ -32,6 +32,7 @@ function getSpecificMatchup(cookies, leagueId, teamLocation, teamName){
 
 
 module.exports = {
-  getMatchups        : getMatchups,
-  getSpecificMatchup : getSpecificMatchup
+  getLeagueScoreboard : getLeagueScoreboard,
+  getMatchups         : getMatchups,
+  getSpecificMatchup  : getSpecificMatchup
 }

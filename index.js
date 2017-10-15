@@ -1,6 +1,7 @@
 const details = require('./details');
 
 module.exports = {
-  getMatchups        : details.getMatchups,
-  getSpecificMatchup : details.getSpecificMatchup
+  getLeagueScoreboard : details.getLeagueScoreboard,
+  getMatchups         : details.getMatchups,
+  getSpecificMatchup  : details.getSpecificMatchup
 }
