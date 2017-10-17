@@ -1,7 +1,7 @@
-const details = require('./details');
+const scoreboard = require('./scoreboard');
 
 module.exports = {
-  getLeagueScoreboard : details.getLeagueScoreboard,
-  getMatchups         : details.getMatchups,
-  getSpecificMatchup  : details.getSpecificMatchup
+  getLeagueScoreboard : scoreboard.getLeagueScoreboard,
+  getMatchups         : scoreboard.getMatchups,
+  getSpecificMatchup  : scoreboard.getSpecificMatchup
 }
