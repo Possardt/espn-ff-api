@@ -8,7 +8,6 @@ function getLeagueScoreboard(cookies, leagueId){
 function getMatchups(cookies, leagueId){
   return getLeagueScoreboard(cookies, leagueId)
     .then(leagueData => {
-      leagueData = JSON.parse(leagueData);
       return leagueData.scoreboard.matchups;
     });
 }

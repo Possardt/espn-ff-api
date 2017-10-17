@@ -34,4 +34,16 @@ espnFF.getSpecificMatchup(cookies, '<leagueId>', '<teamLocation>', '<teamName>')
       .then(matchup => {
         console.log(matchup);
       });
+
+//returns the entire league standings object
+espnFF.getLeagueStandings(cookies, '1564210')
+      .then(standings => {
+        console.log(standings);
+      });
+
+//returns a simplified league standings object sorted by overallStanding
+espnFF.getOverallStandings(cookies, '1564210')
+      .then(result => {
+        console.log(result);
+      });
 ```
