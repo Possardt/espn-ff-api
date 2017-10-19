@@ -27,7 +27,10 @@ function getSpecificMatchup(cookies, leagueId, teamLocation, teamName){
       return teams.map(team => {
         return {
                 teamName : team.team.teamLocation + ' ' + team.team.teamNickname,
-                score    : team.score
+                score    : team.score,
+                wins     : team.team.record.overallWins,
+                losses   : team.team.record.overallLosses,
+                logoUrl  : team.team.logoUrl
               };
       });
     });
