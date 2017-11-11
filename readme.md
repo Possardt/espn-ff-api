@@ -46,4 +46,22 @@ espnFF.getOverallStandings(cookies, '<leagueId>')
       .then(result => {
         console.log(result);
       });
+
+//returns team-level box score data along with a list of player objects for a specific team for a specific week
+espnFF.getSingleTeamLineup(cookies, '<leagueId>', '<teamId>', '<scoringPeriodId>')
+      .then(team => {
+        console.log(team);
+      });
+
+//returns team-level box score data along with a list of player objects for a specific matchup for a specific week
+espnFF.getMatchupLineups(cookies, '<leagueId>', '<teamId>', '<scoringPeriodId>')
+      .then(teams => {
+        console.log(teams);
+      });
+
+//returns simplified box score data for individual players of a specific team for a specific week
+espnFF.getSingleTeamPlayers(cookies, '<leagueId>', '<teamId>', '<scoringPeriodId>')
+      .then(players => {
+        console.log(players);
+      });
 ```
