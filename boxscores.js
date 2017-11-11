@@ -3,17 +3,17 @@ const espnRequest = require('./espn-request');
 // set NFL team names by ID
 const nflTeams = {
   '22': 'Arizona Cardinals',
-  '1': 'Atlanta Falcons',
+  '1' : 'Atlanta Falcons',
   '33': 'Baltimore Ravens',
-  '2': 'Buffalo Bills',
+  '2' : 'Buffalo Bills',
   '29': 'Carolina Panthers',
-  '3': 'Chicago Bears',
-  '4': 'Cincinnati Bengals',
-  '5': 'Cleveland Browns',
-  '6': 'Dallas Cowboys',
-  '7': 'Denver Broncos',
-  '8': 'Detroit Lions',
-  '9': 'Green Bay Packers',
+  '3' : 'Chicago Bears',
+  '4' : 'Cincinnati Bengals',
+  '5' : 'Cleveland Browns',
+  '6' : 'Dallas Cowboys',
+  '7' : 'Denver Broncos',
+  '8' : 'Detroit Lions',
+  '9' : 'Green Bay Packers',
   '34': 'Houston Texans',
   '11': 'Indianapolis Colts',
   '30': 'Jacksonville Jaguars',
@@ -39,17 +39,17 @@ const nflTeams = {
 
 const nflTeamsAbbrev = {
   '22': 'Ari',
-  '1': 'Atl',
+  '1' : 'Atl',
   '33': 'Bal',
-  '2': 'Buf',
+  '2' : 'Buf',
   '29': 'Car',
-  '3': 'Chi',
-  '4': 'Cin',
-  '5': 'Cle',
-  '6': 'Dal',
-  '7': 'Den',
-  '8': 'Det',
-  '9': 'GB',
+  '3' : 'Chi',
+  '4' : 'Cin',
+  '5' : 'Cle',
+  '6' : 'Dal',
+  '7' : 'Den',
+  '8' : 'Det',
+  '9' : 'GB',
   '34': 'Hou',
   '11': 'Ind',
   '30': 'Jax',
@@ -85,10 +85,10 @@ const playerPositions = {
 
 // set lineup positions
 const lineupPositions = {
-  '0': 'QB',
-  '2': 'RB',
-  '4': 'WR',
-  '6': 'TE',
+  '0' : 'QB',
+  '2' : 'RB',
+  '4' : 'WR',
+  '6' : 'TE',
   '16': 'Def',
   '17': 'K',
   '20': 'Bench',
@@ -153,7 +153,6 @@ function getSingleTeamPlayers(cookies, leagueId, teamId, scoringPeriodId){
     })
     .then(players => {
       return players.map(player => {
-        var realPoints = realPoints || 0;
         return {
           playerName        : player.player.firstName + ' ' + player.player.lastName,
           playerPosition    : playerPositions[player.player.eligibleSlotCategoryIds.join(', ')],
