@@ -155,6 +155,7 @@ function getSingleTeamPlayers(cookies, leagueId, teamId, scoringPeriodId){
       return players.map(player => {
         return {
           playerName        : player.player.firstName + ' ' + player.player.lastName,
+          playerTeamId      : teamId,
           playerPosition    : playerPositions[player.player.eligibleSlotCategoryIds.join(', ')],
           lineupPosition    : lineupPositions[player.slotCategoryId.toString()],
           nflTeam           : nflTeams[player.player.proTeamId.toString()],

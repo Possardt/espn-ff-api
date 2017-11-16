@@ -12,10 +12,15 @@ function getOverallStandings(cookies, leagueId){
         return {
                 teamLocation    : team.teamLocation,
                 teamNickname    : team.teamNickname,
+                teamId          : team.teamId,
                 overallStanding : team.overallStanding,
                 divisionStanding: team.divisionStanding,
                 wins            : team.record.overallWins,
-                losses          : team.record.overallLosses
+                losses          : team.record.overallLosses,
+                streakLength    : team.record.streakLength,
+                streakType      : team.record.streakType,
+                pointsFor       : team.record.pointsFor,
+                pointsAgainst   : team.record.pointsAgainst
               };
       });
     })
