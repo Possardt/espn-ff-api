@@ -1,6 +1,6 @@
 {
   "name": "espn-ff-api",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A node package for accessing the espn fantasy football API",
   "main": "index.js",
   "scripts": {
