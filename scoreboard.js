@@ -30,7 +30,8 @@ function getSpecificMatchup(cookies, leagueId, teamLocation, teamName){
                 score    : team.score,
                 wins     : team.team.record.overallWins,
                 losses   : team.team.record.overallLosses,
-                logoUrl  : team.team.logoUrl
+                logoUrl  : team.team.logoUrl,
+                teamId   : team.teamId
               };
       });
     });
