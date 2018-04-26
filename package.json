@@ -6,9 +6,9 @@
   "scripts": {
     "test": "test"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/Possardt/espn-ff-api"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Possardt/espn-ff-api"
   },
   "author": "Ryan Possardt",
   "license": "ISC",
