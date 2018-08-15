@@ -95,20 +95,20 @@ const lineupPositions = {
   '23': 'Flex'
 };
 
-function getBoxScore(cookies, leagueId, teamId, scoringPeriodId){
-  let url = 'http://games.espn.com/ffl/api/v2/boxscore?leagueId=' + leagueId + '&teamId=' + teamId + '&scoringPeriodId=' + scoringPeriodId + '&seasonId=2017';
+function getBoxScore(cookies, leagueId, teamId, scoringPeriodId, season = 2018){
+  let url = 'http://games.espn.com/ffl/api/v2/boxscore?leagueId=' + leagueId + '&teamId=' + teamId + '&scoringPeriodId=' + scoringPeriodId + '&seasonId=' + season;
   return espnRequest.requestToPromise(url, cookies);
 }
 
-function getLineups(cookies, leagueId, teamId, scoringPeriodId){
-  return getBoxScore(cookies, leagueId, teamId, scoringPeriodId)
+function getLineups(cookies, leagueId, teamId, scoringPeriodId, season = 2018){
+  return getBoxScore(cookies, leagueId, teamId, scoringPeriodId, season)
     .then(lineups => {
       return lineups.boxscore.teams;
     });
 }
 
-function getMatchupLineups(cookies, leagueId, teamId, scoringPeriodId){
-  return getLineups(cookies, leagueId, teamId, scoringPeriodId)
+function getMatchupLineups(cookies, leagueId, teamId, scoringPeriodId, season = 2018){
+  return getLineups(cookies, leagueId, teamId, scoringPeriodId, season)
     .then(teams => {
       return teams.map(team => {
         return {
@@ -124,8 +124,8 @@ function getMatchupLineups(cookies, leagueId, teamId, scoringPeriodId){
     });
 }
 
-function getSingleTeamLineup(cookies, leagueId, teamId, scoringPeriodId){
-  return getLineups(cookies, leagueId, teamId, scoringPeriodId)
+function getSingleTeamLineup(cookies, leagueId, teamId, scoringPeriodId, season = 2018){
+  return getLineups(cookies, leagueId, teamId, scoringPeriodId, season)
     .then(teams => {
       return teams.filter(function(obj){
         return obj.team.teamId == teamId;
@@ -146,8 +146,8 @@ function getSingleTeamLineup(cookies, leagueId, teamId, scoringPeriodId){
     });
 }
 
-function getSingleTeamPlayers(cookies, leagueId, teamId, scoringPeriodId){
-  return getSingleTeamLineup(cookies, leagueId, teamId, scoringPeriodId)
+function getSingleTeamPlayers(cookies, leagueId, teamId, scoringPeriodId, season = 2018){
+  return getSingleTeamLineup(cookies, leagueId, teamId, scoringPeriodId, season)
     .then(team => {
       return team[0].players;
     })

@@ -1,12 +1,12 @@
 const espnRequest = require('./espn-request');
 
-function getLeagueStandings(cookies, leagueId){
-  let url = 'http://games.espn.com/ffl/api/v2/standings?leagueId=' + leagueId + '&seasonId=2017';
+function getLeagueStandings(cookies, leagueId, season = 2018){
+  let url = 'http://games.espn.com/ffl/api/v2/standings?leagueId=' + leagueId + '&seasonId=' + season;
   return espnRequest.requestToPromise(url, cookies);
 }
 
-function getOverallStandings(cookies, leagueId){
-  return getLeagueStandings(cookies, leagueId)
+function getOverallStandings(cookies, leagueId, season = 2018){
+  return getLeagueStandings(cookies, leagueId, season)
     .then(standings => {
       return standings.teams.map(team => {
         return {
