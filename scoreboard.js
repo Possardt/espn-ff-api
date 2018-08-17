@@ -1,19 +1,19 @@
 const espnRequest = require('./espn-request');
 
-function getLeagueScoreboard(cookies, leagueId){
-  let url = 'http://games.espn.com/ffl/api/v2/scoreboard?leagueId=' + leagueId + '&seasonId=2017';
+function getLeagueScoreboard(cookies, leagueId, season = 2018){
+  let url = 'http://games.espn.com/ffl/api/v2/scoreboard?leagueId=' + leagueId + '&seasonId=' + season;
   return espnRequest.requestToPromise(url, cookies);
 }
 
-function getMatchups(cookies, leagueId){
-  return getLeagueScoreboard(cookies, leagueId)
+function getMatchups(cookies, leagueId, season = 2018){
+  return getLeagueScoreboard(cookies, leagueId, season)
     .then(leagueData => {
       return leagueData.scoreboard.matchups;
     });
 }
 
-function getSpecificMatchup(cookies, leagueId, teamLocation, teamName){
-  return getMatchups(cookies, leagueId)
+function getSpecificMatchup(cookies, leagueId, teamLocation, teamName, season = 2018){
+  return getMatchups(cookies, leagueId, season)
     .then(matchups => {
       return matchups.filter(matchup => {
         return (matchup.teams[0].team.teamLocation === teamLocation && matchup.teams[0].team.teamNickname === teamName) ||
