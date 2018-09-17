@@ -3,7 +3,7 @@ const espnRequest = require('./espn-request');
 function getLeagueScoreboard(cookies, leagueId, season = 2018, matchupPeriodId){
   let url = 'http://games.espn.com/ffl/api/v2/scoreboard?leagueId=' + leagueId + '&seasonId=' + season;
   if (matchupPeriodId) {
-    url += '$matchupPeriodId=' + matchupPeriodId;
+    url += '&matchupPeriodId=' + matchupPeriodId;
   }
   return espnRequest.requestToPromise(url, cookies);
 }
